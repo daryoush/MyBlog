@@ -1,0 +1,12 @@
+---
+layout: post
+title: Insight into continuation  and Haskell
+date: '2011-01-10T15:55:00.001-08:00'
+author: daryoush
+tags: 
+modified_time: '2012-10-11T00:40:06.859-07:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-2025649293697437566
+blogger_orig_url: http://onfp.blogspot.com/2011/01/insight-into-continuation-and-haskell.html
+---
+
+A really nice introduction to <a href="http://research.microsoft.com/apps/video/dl.aspx?id=103761">continuation</a>.<br /><br />The talk covers Scheme's implementation of Continuation.   What is interesting to note is that in language like Scheme, or Java to implement continuation you need hooks in the native language.    For instance, in this <a href="http://www.artima.com/lejava/articles/continuations.html">interview</a>  Bill Venners tries to explain the Java CM changes that are required to capture the continuation.    <br /><br />But if you look at Haskell version of continuation, you realize that there are no changes in the underlying language.  Continuation, just like Exception handling  is implemented as a library (<a href="http://hackage.haskell.org/packages/archive/mtl/2.0.1.0/doc/html/Control-Monad-Cont.html">Control.Monad.Control.ContT</a>).  Even delimited continuation can be done as a library: <a href="http://www.haskell.org/haskellwiki/MonadCont_done_right">MonadCont</a> or <a href="http://www.haskell.org/haskellwiki/Library/CC-delcont">CC-delcont</a>.

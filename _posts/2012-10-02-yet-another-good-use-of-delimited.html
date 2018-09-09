@@ -1,0 +1,12 @@
+---
+layout: post
+title: Yet another good use of delimited continuation
+date: '2012-10-02T16:37:00.002-07:00'
+author: daryoush
+tags: 
+modified_time: '2012-10-02T16:56:01.384-07:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-3542547181781596688
+blogger_orig_url: http://onfp.blogspot.com/2012/10/yet-another-good-use-of-delimited.html
+---
+
+<a href="http://blog.moertel.com/articles/2005/09/13/scope-herding-with-delimited-continuations">Scope herding with delimited continuations</a> <p>One confusing aspect to the continuation discussion is that in Scheme (where continuation got its start) future of computation is what is to the left of the shift.  For instance in  (reset (foo (bar ( shift....)))) the bar and foo  functions are the rest of the computation  after the shift (thus the context that is passed to the shift function). Whereas in Haskell's do notation we have   <blockquote>shift $ do<BR/>      .....<BR/>     shift ( some function here )<BR/>     bar<BR/>     foo</blockquote><BR/> <p> Here the rest of the continuation (the bar, and foo) are what follows the shift to the end of the do block.    Seems more intuitive, doesn't it?   

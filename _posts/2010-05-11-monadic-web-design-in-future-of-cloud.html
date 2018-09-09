@@ -1,0 +1,12 @@
+---
+layout: post
+title: Monadic Web design in future of Cloud Computing?
+date: '2010-05-11T22:56:00.000-07:00'
+author: daryoush
+tags: 
+modified_time: '2010-05-11T23:37:45.593-07:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-2459296466647818855
+blogger_orig_url: http://onfp.blogspot.com/2010/05/monadic-web-design-in-future-of-cloud.html
+---
+
+In all discussions around cloud computing, at least to me, it seemsthat there are too much attention to low level detail and not enough on the bigger more abstract picture.<br /><br />I think this <a href="http://vimeo.com/5318303">presentation</a> describes an interesting alternative to the conventional thinking on what cloud computing will, or at least should be.  (<br /><br />Even though the presentation talks about search, there may be bigger point in the approach to the problem.  <br /><br />In the presentation the speaker shows that an application can be broken down into various well known notions.  I would think map/reduce would be one such notion.  But there are other notions such as non determinism, back tracking, .... that an application may be based on.<br /><br />In context of cloud, looking at it in abstract, if the underlying computational notions are cloud-aware/capable, or at least well understood as a cloud component,  then application written on them can easily run in a cloud just as simply it can run on a single machine.    The notions can be made to hide all the plumbing and make the application cloud agnostic.  The big change from the existing imperative programming is a re-evaluation of the application along functional model to separate the problem domain logic from the notions.  In the new model the application can be made to run in the cloud by only changing the underlying notions.   This is exactly what happened when people redid their application to run in the cloud as Map/Reduce.  But Map/Reduce can't be the only notion that can be made into a cloud.   To find other one needs to go back and study the notions of computation in more abstract terms and implement them as cloud.  The presentation shows examples of such an approach in context of sophisticated search queries.

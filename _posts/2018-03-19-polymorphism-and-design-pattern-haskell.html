@@ -1,0 +1,12 @@
+---
+layout: post
+title: Polymorphism and Design Pattern Haskell Style
+date: '2018-03-19T12:07:00.000-07:00'
+author: daryoush
+tags: 
+modified_time: '2018-03-19T12:07:04.792-07:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-506563548861391960
+blogger_orig_url: http://onfp.blogspot.com/2018/03/polymorphism-and-design-pattern-haskell.html
+---
+
+The following short demonstration does a nice job capturing parametric polymorphism and design patterns in Haskell.<br /><a href="https://www.blogger.com/goog_1249597859"><br /></a><a href="https://youtu.be/ASz_JTKO4VY">Domain Modelling with Haskell: Generalizing with Foldable and Traversable</a><br /><br />It is easy to see polymorphism in a list.&nbsp; You can have a list of people, and you map a function over them to get their names.&nbsp; Now you have a list of strings, or Maybe Strings for the names of each person on the list.&nbsp; So the list went from List of People to List of Maybe Strings.<br /><br />This a bit more challenging to see in your own data types.&nbsp; &nbsp;In the video above the data type for Project is modified to use a polymorphic&nbsp;parameter "a" instead of fixed project id.&nbsp; &nbsp;This allows for the project to maintain its structure (the constructors) as functions are applied to the subelements of the structure.&nbsp; This is just like what happens in the list but it is a bit harder to see if you are accustomed to generics in the OO sense.<br /><br />The notion of design pattern is also interesting in this lecture.&nbsp; &nbsp;There are two main issues with the traditional GOF design pattern.&nbsp; First, is that if there is a pattern why isn't it implemented in code once and reused everywhere.&nbsp; &nbsp;Second,&nbsp; patterns are not in the design but in forms of computation.&nbsp; &nbsp;In this video, you can see the computational patterns&nbsp; Functor, Foldable and Traversable are used in the computation.&nbsp; &nbsp; More importantly, as they are patterns it can be automatically derived.&nbsp; 

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Finding largest rectangular area without trees
+date: '2011-01-19T12:38:00.000-08:00'
+author: daryoush
+tags: 
+modified_time: '2011-01-19T13:13:34.855-08:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-4692482782559020986
+blogger_orig_url: http://onfp.blogspot.com/2011/01/finding-largest-rectangular-area.html
+---
+
+In an interview I was asked a question very similar to <a href="http://www.seas.gwu.edu/~simhaweb/cs151/lectures/module6/module6.html">this</a> or <a href="http://www.drdobbs.com/database/184410529">this</a>.<br /><br />In my version there is a rectangular piece of land with trees on it.  We know the coordinates of the land and the location of the trees on the land.  Goal is to find the largest contiguous rectangular area within our land that doesn't contain any trees.<br /><br />Solving these problems require you to develop the properties of the problem that then you can base an algorithm on for which there is no time.  My response in the interview was what I consider brute force method of trying to take a square and see how big it can grow.  Then try to find the largest one.  <br /><br />But thinking about the problem more I said what if I had a land and one tree.  Then I get essentially 4 areas.  Now if I have two trees, I should be able to take the areas from the first tree and check to see if the 2nd tree would influence them. If the 2nd tree is inside an area, then it would give me potentially 4  areas to work with.  That is the one area is replaced with up to 4 (removing the original one).  If there are no tree in the area then the area is unaffected by the 2nd tree.  So now I can try the 3rd, 4th... tree.    Each time check the effect of the tree on the land.  At the end the one with the largest area is my answer.   This solution doesn't care about the size of the land, just the number of trees.<br /><br /><a href="https://docs.google.com/leaf?id=0B0MMAEYeDOlWYWJhOGMxMjUtY2U1MS00NDA4LWFmZTEtZWQ4ZDdiNWY5YjNk&hl=en">Here</a> is what I wrote in Haskell that I think solves the problem.   The implementation takes advantage of <a href="http://hackage.haskell.org/packages/archive/base/latest/doc/html/Control-Monad.html#v:foldM">foldM</a> library to do most of the work. In foldM signature, "a" is my land, "b" is the tree, and  "ma" is List of a which is a list of land pieces.  Any feedback is appreciated.

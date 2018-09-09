@@ -1,0 +1,12 @@
+---
+layout: post
+title: Expression and Data
+date: '2010-05-27T10:51:00.001-07:00'
+author: daryoush
+tags: 
+modified_time: '2010-05-27T10:55:24.829-07:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-725085304547141263
+blogger_orig_url: http://onfp.blogspot.com/2010/05/expression-and-data.html
+---
+
+So functional programming is about <span style="font-style:italic;">expressions</span> instead of <span style="font-style:italic;">statements</span>.    As such it is interesting to note that expressions are also how you "express" your data model.  There was an interesting example of that in Haskell Cafe's mailing list:<br /><br />A question was asked as: "<br /><a href="http://groups.google.com/group/fa.haskell/browse_thread/thread/33f5a3c92ec87d51">Why Either = Left | Right instead of something like Result = Success | Failure</a>"     This was interesting in the answers:<br /><br /><blockquote>Either is a generic sum type. That is, "Either A B" only means "either you have an A, or you have a B". Use of Left to represent failure is merely a matter of convention. Similarly, the generic product type in Haskell is the 2-tuple--"(A, B)" only means "you have both an A and a B". </blockquote>

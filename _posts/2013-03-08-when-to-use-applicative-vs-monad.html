@@ -1,0 +1,12 @@
+---
+layout: post
+title: When to use Applicative vs Monad
+date: '2013-03-08T14:24:00.002-08:00'
+author: daryoush
+tags: 
+modified_time: '2013-03-09T16:23:22.694-08:00'
+blogger_id: tag:blogger.com,1999:blog-5623577383635787454.post-7542294324195598165
+blogger_orig_url: http://onfp.blogspot.com/2013/03/when-to-use-applicative-vs-monad.html
+---
+
+A nice rule of &nbsp;as to when you must use Monad and when you can use Applicative style:<br /><br /><a href="http://stackoverflow.com/a/11702411/2150182">How do you use Control.Applicative to write cleaner Haskell?</a><br /><br /><br />Update: &nbsp; May be another way to look at this is to think of &gt;&gt;= as combinator that applies the mapping function then &nbsp;flattens the result of application of &nbsp;(a -&gt; mb), and (in some implementations) change the computation based on the value of the "a". &nbsp; In computations where the &gt;&gt;= is only flattening the types, it can be converted to an Applicative computation. <br /><br /><br />
